@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping
 public class ProgressRegistrationController {
     private final ProgressRepository progressRepository;
 
@@ -20,13 +19,12 @@ public class ProgressRegistrationController {
         this.progressRepository = progressRepository;
     }
 
-    @GetMapping
-
+    @GetMapping("/progress-register")
     public String preprareRegistrationPage () {
         return "WEB-INF/jsp/progress-registration-page.jsp";
     }
 
-    @PostMapping
+    @PostMapping("/progress-register")
     public String processRegistrationPage (LocalDate date, Double weight, Double height, Double targetWeight, String commentary) {
         Progress progress = new Progress();
 

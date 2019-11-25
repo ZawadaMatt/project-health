@@ -7,11 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping
 public class PatientRegistrationController {
     private final PatientsRepository patientsRepository;
 
@@ -20,12 +20,12 @@ public class PatientRegistrationController {
         this.patientsRepository = patientsRepository;
     }
 
-    @GetMapping
+    @GetMapping("/patient-register")
     public String prepareRegistrationPage () {
         return "WEB-INF/jsp/patient-registration-page.jsp";
     }
 
-    @PostMapping
+    @PostMapping("/patient-register")
     public String processRegistrationPage(String email, String password, String gender, String name, String lastName, LocalDate birthDate, String affection, String phoneNumber) {
         Patient patient = new Patient();
         patient.setEmail(email);

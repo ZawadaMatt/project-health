@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping
 public class DieticianRegistrationController {
     private final DieticanRepository dieticianRepository;
 
@@ -18,12 +17,12 @@ public class DieticianRegistrationController {
         this.dieticianRepository = dieticianRepository;
     }
 
-    @GetMapping
+    @GetMapping("/dietic-register")
     public String prepareRegistrationPage(){
     return "WEB-INF/jsp/dietician-registration-page.jsp";
     }
 
-    @PostMapping
+    @PostMapping("/dietic-register")
     public String processRegistrationPage(String password, String email, String licenceNumber, String name, String lastName){
         Dietician dietician= new Dietician();
         dietician.setEmail(email);
