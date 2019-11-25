@@ -22,7 +22,6 @@ public class Meal {
         return id;
     }
 
-
     public String getName() {
         return name;
     }

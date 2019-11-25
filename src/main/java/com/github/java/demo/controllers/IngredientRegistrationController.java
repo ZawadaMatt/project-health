@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping
 public class IngredientRegistrationController {
 
 
@@ -20,13 +19,12 @@ public class IngredientRegistrationController {
         this.ingredientRepository = ingredientRepository;
     }
 
-    @GetMapping
-
+    @GetMapping("/ingredient-register")
     public String preprareRegistrationPage () {
         return "WEB-INF/jsp/ingredient-registration-page.jsp";
     }
 
-    @PostMapping
+    @PostMapping("/ingredient-register")
     public String processRegistrationPage (String name, Double calories, Double protein, Double fats, Double carbs, Double salt, Double weight, String category) {
         Ingredient ingredient = new Ingredient();
 

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.HashSet;
 
 @Controller
-@RequestMapping
 public class MealRegistrationController {
     private final MealRepository mealRepository;
 
@@ -20,13 +19,12 @@ public class MealRegistrationController {
         this.mealRepository = mealRepository;
     }
 
-    @GetMapping
-
+    @GetMapping("/meal-register")
     public String preprareRegistrationPage () {
         return "WEB-INF/jsp/meal-registration-page.jsp";
     }
 
-    @PostMapping
+    @PostMapping("/meal-register")
     public String processRegistrationPage (String name, HashSet ingrediens, String recipt) {
         Meal meal = new Meal();
         meal.setName(name);

@@ -29,7 +29,7 @@ public class Ingredient {
     private String category;
 
     @ManyToMany
-    Set<Meal> meal = new HashSet<>();
+    Set<Meal> meals = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -99,12 +99,12 @@ public class Ingredient {
         this.category = category;
     }
 
-    public Set<Meal> getMeal () {
-        return meal;
+    public Set<Meal> getMeals() {
+        return meals;
     }
 
-    public void setMeal (Set<Meal> meal) {
-        this.meal = meal;
+    public void setMeals(Set<Meal> meals) {
+        this.meals = meals;
     }
 
     @Override
@@ -132,7 +132,7 @@ public class Ingredient {
                 ", salt=" + salt +
                 ", weight=" + weight +
                 ", category='" + category + '\'' +
-                ", meals=" + meal +
+                ", meals=" + meals +
                 '}';
     }
 }
