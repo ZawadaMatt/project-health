@@ -31,11 +31,11 @@ public class Meal {
         this.name = name;
     }
 
-    public Set<Ingredient> getIngredients() {
+    public Set<Ingredient> getIngredients () {
         return ingredients;
     }
 
-    public void setIngredients(Set<Ingredient> ingredients) {
+    public void setIngredients (Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 

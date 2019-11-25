@@ -14,7 +14,7 @@ public class Ingredient {
     @Column
     private String name;
     @Column
-    private String calories;
+    private Double calories;
     @Column
     private Double protein;
     @Column
@@ -29,7 +29,7 @@ public class Ingredient {
     private String category;
 
     @ManyToMany
-    Set<Meal> meals = new HashSet<>();
+    Set<Meal> meal = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -43,11 +43,11 @@ public class Ingredient {
         this.name = name;
     }
 
-    public String getCalories() {
+    public Double getCalories() {
         return calories;
     }
 
-    public void setCalories(String calories) {
+    public void setCalories(Double calories) {
         this.calories = calories;
     }
 
@@ -99,12 +99,12 @@ public class Ingredient {
         this.category = category;
     }
 
-    public Set<Meal> getMeals() {
-        return meals;
+    public Set<Meal> getMeal () {
+        return meal;
     }
 
-    public void setMeals(Set<Meal> meals) {
-        this.meals = meals;
+    public void setMeal (Set<Meal> meal) {
+        this.meal = meal;
     }
 
     @Override
@@ -132,7 +132,7 @@ public class Ingredient {
                 ", salt=" + salt +
                 ", weight=" + weight +
                 ", category='" + category + '\'' +
-                ", meals=" + meals +
+                ", meals=" + meal +
                 '}';
     }
 }
