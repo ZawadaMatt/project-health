@@ -9,7 +9,6 @@ public class HomePageController {
 
     @GetMapping("/home")
     public String get(Model model) {
-        model.addAttribute("name", "Działaj");
-        return "home";
+        return "index";
     }
 }
