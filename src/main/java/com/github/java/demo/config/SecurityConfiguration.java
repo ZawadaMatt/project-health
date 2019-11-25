@@ -17,14 +17,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         this.dataSource = dataSource;
     }
 
-
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/home").permitAll();
-
-
     }
 
     @Override
