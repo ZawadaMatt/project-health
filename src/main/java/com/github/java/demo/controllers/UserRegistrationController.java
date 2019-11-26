@@ -19,7 +19,7 @@ public class UserRegistrationController {
         this.dieticanRepository = dieticanRepository;
     }
 
-    @GetMapping("/register")
+    @GetMapping("/user-register")
     public String prepareRegistrationPage() {
         return "registration";
     }
