@@ -4,7 +4,6 @@ import com.github.java.demo.domain.Dietician;
 import com.github.java.demo.domain.Patient;
 import com.github.java.demo.repositories.DieticanRepository;
 import com.github.java.demo.repositories.PatientsRepository;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
