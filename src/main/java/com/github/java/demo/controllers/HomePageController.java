@@ -29,6 +29,7 @@ public class HomePageController {
 
     @PostMapping("/auth")
     public String auth(String email, String password) {
+
         return "";
     }
 }

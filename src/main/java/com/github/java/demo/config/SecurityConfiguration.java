@@ -27,9 +27,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/register-dietician").anonymous()
                 .antMatchers("/register-patient").anonymous()
-                .antMatchers("/add-dietician").permitAll()
+                .antMatchers("/add-dietician").anonymous()
                 .antMatchers("/add-patient").permitAll()
-                .antMatchers("/offer").permitAll();
+                .antMatchers("/user-login").anonymous()
+                .antMatchers("/offer").permitAll()
+                .anyRequest().authenticated();
     }
 
     @Override
