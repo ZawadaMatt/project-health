@@ -1,10 +1,10 @@
 package com.github.java.demo.controllers;
 
+import com.github.java.demo.domain.Patient;
 import com.github.java.demo.repositories.DieticanRepository;
 import com.github.java.demo.repositories.PatientsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -19,15 +19,28 @@ public class UserRegistrationController {
         this.dieticanRepository = dieticanRepository;
     }
 
-    @GetMapping("/user-register")
-    public String prepareRegistrationPage() {
-        return "registration";
+    @GetMapping("/register-dietician")
+    public String prepareDieticanRegister() {
+        return "register-dietician";
     }
 
-    @PostMapping("/register")
-    public String processRegistrationPage(Model model) {
+    @GetMapping("register-patient")
+    public String preparePatientRegister() {
+        return "register-patient";
+    }
 
+    @PostMapping("/add-patient")
+    public String addUsertoDataBase(String email, String password) {
+        Patient newPatient = new Patient();
+        newPatient.setEmail(email);
+        newPatient.setPassword(password);
         return "index";
+    }
+
+    @PostMapping("/add-dietician")
+    public String addDieticianToDataBase() {
+
+        return "";
     }
 
 }

@@ -29,12 +29,49 @@ public class Patient {
     private String gender;
     @Column
     private String affections;
+    @Column
+    private LocalDate createAt;
+    @Column
+    private boolean isActive;
 
     @ManyToOne
     private Dietician mainDoctor;
 
     @OneToMany(mappedBy = "patient")
     private Set<Progress> progressSet = new HashSet<>();
+
+    public Patient() {
+    }
+
+    public Patient(String password, String email, String phoneNumber, String name, String lastName, LocalDate birthDate, String gender, String affections, Set<Progress> progressSet) {
+        this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.name = name;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.gender = gender;
+        this.affections = affections;
+        this.createAt = LocalDate.now();
+        this.isActive = true;
+        this.progressSet = progressSet;
+    }
+
+    public LocalDate getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(LocalDate createAt) {
+        this.createAt = createAt;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     public Long getId() {
         return id;
