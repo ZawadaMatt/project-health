@@ -28,7 +28,6 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Strona startowa</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu
         <i class="fas fa-bars">
         </i></button>
@@ -37,8 +36,14 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/user-register">Zarejestruj</a>
+          <li class="dropdown">
+            <a class="nav-link"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zarejestruj </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item btn btn-primary" href="/register-dietician">Dietetyk</a>
+                <a class="dropdown-item btn btn-primary" href="/register-patient">Pacjent</a>
+
+              </div>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/user-login">Zaloguj</a>
