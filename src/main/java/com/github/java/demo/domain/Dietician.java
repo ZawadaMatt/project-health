@@ -1,12 +1,15 @@
 package com.github.java.demo.domain;
 
+import com.github.java.demo.security.User;
+import com.github.java.demo.security.UserRole;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-public class Dietician {
+public class Dietician implements User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -75,6 +78,11 @@ public class Dietician {
 
     public void setPatientSet(Set<Patient> patientSet) {
         this.patientSet = patientSet;
+    }
+
+    @Override
+    public UserRole getRole() {
+        return UserRole.DIETETIAN;
     }
 
     @Override

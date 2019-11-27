@@ -1,6 +1,9 @@
 package com.github.java.demo.domain;
 
 
+import com.github.java.demo.security.User;
+import com.github.java.demo.security.UserRole;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -8,7 +11,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "patients")
-public class Patient {
+public class Patient implements User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -77,6 +80,7 @@ public class Patient {
         return id;
     }
 
+    @Override
     public String getPassword() {
         return password;
     }
@@ -85,6 +89,7 @@ public class Patient {
         this.password = password;
     }
 
+    @Override
     public String getEmail() {
         return email;
     }
@@ -155,6 +160,12 @@ public class Patient {
 
     public void setProgressSet(Set<Progress> progressSet) {
         this.progressSet = progressSet;
+    }
+
+
+    @Override
+    public UserRole getRole() {
+        return UserRole.PATIENT;
     }
 
     @Override

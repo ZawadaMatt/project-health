@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DieticanRepository extends JpaRepository<Dietician, Long> {
 
+    Dietician findByEmail(String email);
+
 }
