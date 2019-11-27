@@ -1,11 +1,15 @@
 package com.github.java.demo.config;
 
+import com.github.java.demo.repositories.DieticanRepository;
+import com.github.java.demo.repositories.PatientsRepository;
+import com.github.java.demo.security.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -14,10 +18,15 @@ import javax.sql.DataSource;
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private final DataSource dataSource;
+    private PatientsRepository patientsRepository;
+    private DieticanRepository dieticanRepository;
+
 
     @Autowired
-    SecurityConfiguration(DataSource dataSource) {
+    SecurityConfiguration(DataSource dataSource, PatientsRepository patientsRepository, DieticanRepository dieticanRepository) {
         this.dataSource = dataSource;
+        this.patientsRepository = patientsRepository;
+        this.dieticanRepository = dieticanRepository;
     }
 
     @Override
@@ -31,11 +40,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/add-patient").permitAll()
                 .antMatchers("/user-login").anonymous()
                 .antMatchers("/offer").permitAll();
+      
+        http.httpBasic();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSource);
+        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+    }
+
+    @Bean
+    @Override
+    protected UserDetailsService userDetailsService() {
+        return new UserDetailsServiceImpl(this.dieticanRepository, this.patientsRepository);
     }
 
     @Bean
