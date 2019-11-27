@@ -40,8 +40,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/add-patient").permitAll()
                 .antMatchers("/user-login").anonymous()
                 .antMatchers("/offer").permitAll();
-      
-        http.httpBasic();
+
+        http.formLogin()
+                .loginPage("/user-login")
+                .loginProcessingUrl("/auth")
+                .usernameParameter("email")
+                .passwordParameter("password")
+                .successForwardUrl("/")
+                .defaultSuccessUrl("/");
     }
 
     @Override
