@@ -1,7 +1,10 @@
 package com.github.java.demo.controllers;
 
+import com.github.java.demo.domain.Dietician;
+import com.github.java.demo.domain.Patient;
 import com.github.java.demo.repositories.DieticanRepository;
 import com.github.java.demo.repositories.PatientsRepository;
+import com.github.java.demo.security.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -33,10 +36,16 @@ public class HomePageController {
 
         if (authentication.getAuthorities().stream()
                 .anyMatch(a -> ((GrantedAuthority) a).getAuthority().equalsIgnoreCase("PATIENT"))) {
+            Patient patient = patientsRepository
+                    .findPatientByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+            model.addAttribute("patient", patient);
             return "patient-panel";
 
         } else if (authentication.getAuthorities().stream()
                 .anyMatch(a -> ((GrantedAuthority) a).getAuthority().equalsIgnoreCase("DIETETIAN"))) {
+            Dietician dietician = dieticanRepository
+                    .findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+            model.addAttribute("dietician", dietician);
             return "dietetican-panel";
         }
         return "index";
