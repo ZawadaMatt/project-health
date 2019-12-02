@@ -32,11 +32,11 @@ public class Dietician implements User {
         return id;
     }
 
-    public String getPassword () {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword (String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -78,6 +78,10 @@ public class Dietician implements User {
 
     public void setPatientSet(Set<Patient> patientSet) {
         this.patientSet = patientSet;
+    }
+
+    public void addPatientToSet(Patient patient) {
+        patientSet.add(patient);
     }
 
     @Override

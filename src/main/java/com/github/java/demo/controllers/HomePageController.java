@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
@@ -60,5 +61,13 @@ public class HomePageController {
     @ResponseBody
     public String getLoggedUser() {
         return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
+
+    @PostMapping("/patient-to-list")
+    public String patientToList(String email) {
+        Patient patient = patientsRepository.findPatientByEmail(email);
+        Dietician dietician = dieticanRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+        dietician.addPatientToSet(patient);
+        return "redirect:/";
     }
 }
