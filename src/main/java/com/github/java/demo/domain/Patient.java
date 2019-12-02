@@ -40,8 +40,19 @@ public class Patient implements User {
     @ManyToOne
     private Dietician mainDoctor;
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany//(mappedBy = "patient")
     private Set<Progress> progressSet = new HashSet<>();
+
+   @OneToOne
+   Diet diet;
+
+    public Diet getDiet () {
+        return diet;
+    }
+
+    public void setDiet (Diet diet) {
+        this.diet = diet;
+    }
 
     public Patient() {
     }

@@ -30,6 +30,10 @@ public class MealRegistrationController {
         meal.setName(name);
         meal.setIngredients(ingrediens);
         meal.setRecipt(recipt);
+        mealRepository.save(meal);
+
+
+
 
 
 
