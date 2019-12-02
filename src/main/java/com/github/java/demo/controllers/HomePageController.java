@@ -5,6 +5,7 @@ import com.github.java.demo.domain.Patient;
 import com.github.java.demo.repositories.DieticanRepository;
 import com.github.java.demo.repositories.PatientsRepository;
 import com.github.java.demo.security.UserDetailsImpl;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,17 +17,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 
 @Controller
 public class HomePageController {
 
-    private PasswordEncoder passwordEncoder;
+    private EntityManager entityManager;
     private DieticanRepository dieticanRepository;
     private PatientsRepository patientsRepository;
 
     @Autowired
-    HomePageController(PasswordEncoder passwordEncoder, DieticanRepository dieticanRepository, PatientsRepository patientsRepository) {
-        this.passwordEncoder = passwordEncoder;
+    HomePageController(EntityManager entityManager, DieticanRepository dieticanRepository, PatientsRepository patientsRepository) {
+        this.entityManager = entityManager;
         this.dieticanRepository = dieticanRepository;
         this.patientsRepository = patientsRepository;
     }
@@ -63,11 +67,14 @@ public class HomePageController {
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 
+    @Transactional
     @PostMapping("/patient-to-list")
     public String patientToList(String email) {
         Patient patient = patientsRepository.findPatientByEmail(email);
         Dietician dietician = dieticanRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
-        dietician.addPatientToSet(patient);
+        patient.setMainDoctor(dietician);
+        entityManager.merge(dietician);
+        entityManager.refresh(dietician);
         return "redirect:/";
     }
 }
