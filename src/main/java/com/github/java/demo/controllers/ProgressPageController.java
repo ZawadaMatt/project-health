@@ -18,8 +18,8 @@ public class ProgressPageController {
     }
 
     @GetMapping("/progress/{id}")
-    public String progressPage(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("patientProgress", patientsRepository.findPatientById(id));
+    public String progressPage(@PathVariable("id") String id, Model model) {
+        model.addAttribute("patientProgress", patientsRepository.findPatientById(Long.parseLong(id)));
         return "panel";
     }
 

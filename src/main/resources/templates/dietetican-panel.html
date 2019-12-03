@@ -368,11 +368,11 @@
                 <th:block th:each="patient : ${dietician.patientSet}" >
 
                   <tr>
-                    <td><a href="/idpatient" th:text="${patient.name}" > </a></td>
-                    <td><a href="/idpatient" th:text="${patient.lastName}"></a></td>
-                    <td><a href="/idpatient" th:text="${patient.email}" > </a></td>
-                    <td> <a href="/idpatient" th:text="${patient.phoneNumber}" > </a></td>
-                    <td> <a href="/idpatient" th:text="${patient.createAt}" ></a></td>
+                    <td><a th:href="@{'/progress/' + ${patient.id}}" th:text="${patient.name}" > </a></td>
+                    <td><a th:href="@{'/progress/' + ${patient.id}}" th:text="${patient.lastName}"></a></td>
+                    <td><a th:href="@{'/progress/' + ${patient.id}}" th:text="${patient.email}" > </a></td>
+                    <td><a th:href="@{'/progress/' + ${patient.id}}" th:text="${patient.phoneNumber}" > </a></td>
+                    <td><a th:href="@{'/progress/' + ${patient.id}}" th:text="${patient.createAt}"> </a> </td>
                   </tr>
                 </th:block>
                 </tbody>
