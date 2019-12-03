@@ -23,9 +23,6 @@ public class DietRegistrationController {
     }
 
 
-
-
-
     @PostMapping("/diet-registration")
     public String dietRegistration(String name, LocalDate startdate, Set<Meal> mealsList, String patient ){
         Diet goodluck= new Diet();
