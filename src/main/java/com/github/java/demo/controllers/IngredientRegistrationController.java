@@ -19,10 +19,14 @@ public class IngredientRegistrationController {
         this.ingredientRepository = ingredientRepository;
     }
 
+    @GetMapping("/ingredient-register")
+    public String addIngredient() {
 
+        return "redirect:/";
+    }
 
     @PostMapping("/ingredient-register")
-    public String ingredientRegistration(String name, String calories, String protein, String fats, String carbs, String salt, String weight, String category){
+    public String ingredientRegistration(String name, String calories, String protein, String fats, String carbs, String salt, String weight, String category) {
         Ingredient ingredient = new Ingredient();
         ingredient.setName(name);
         ingredient.setCalories(Double.parseDouble(calories));
@@ -34,7 +38,6 @@ public class IngredientRegistrationController {
         ingredient.setWeight(Double.parseDouble(weight));
         ingredient.setCategory(category);
         ingredientRepository.save(ingredient);
-       
 
         return "redirect:/";
     }
