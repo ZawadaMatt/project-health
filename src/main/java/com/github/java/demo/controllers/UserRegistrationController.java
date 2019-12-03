@@ -1,6 +1,7 @@
 package com.github.java.demo.controllers;
 
 import com.github.java.demo.domain.Dietician;
+import com.github.java.demo.domain.Meal;
 import com.github.java.demo.domain.Patient;
 import com.github.java.demo.repositories.DieticanRepository;
 import com.github.java.demo.repositories.PatientsRepository;
@@ -61,6 +62,8 @@ public class UserRegistrationController {
         newDietician.setLicenceNumber(licenceNumber);
         dieticanRepository.save(newDietician);
         return "index";
-    }
+        }
+
+
 
 }

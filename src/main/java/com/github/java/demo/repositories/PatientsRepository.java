@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface PatientsRepository extends JpaRepository<Patient, Long> {
 
     Patient findPatientByEmail(String email);
+    //Patient findPatientByNameAndLastNameAndEmail (String name, String lastName, String email); ->teraz skok do dietRegistrationController i obczaj    String[] split = patient.split(",");
+    //        patientsRepository.findPatientByEmail(split[2]);
 }
