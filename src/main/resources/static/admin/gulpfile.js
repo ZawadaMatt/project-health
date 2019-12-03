@@ -105,6 +105,13 @@ function css() {
     .pipe(browsersync.stream());
 }
 
+$(document).ready(function($) {
+  $(".table-row").click(function() {
+    window.document.location = $(this).data("href");
+  });
+});
+
+
 // JS task
 function js() {
   return gulp
@@ -143,3 +150,4 @@ exports.vendor = vendor;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
+
