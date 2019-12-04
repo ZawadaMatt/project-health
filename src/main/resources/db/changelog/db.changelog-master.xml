@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="macie (generated)" id="1575482442808-1">
+        <createTable tableName="diet">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="current_day" type="date"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="startdate" type="date"/>
+            <column name="patient_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-2">
+        <createTable tableName="diet_meals_list">
+            <column name="diet_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meals_list_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-3">
+        <createTable tableName="dietician">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="licence_number" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-4">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-5">
+        <createTable tableName="ingredient">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="calories" type="DOUBLE"/>
+            <column name="carbs" type="DOUBLE"/>
+            <column name="category" type="VARCHAR(255)"/>
+            <column name="fats" type="DOUBLE"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="protein" type="DOUBLE"/>
+            <column name="salt" type="DOUBLE"/>
+            <column name="weight" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-6">
+        <createTable tableName="ingredient_meals">
+            <column name="ingredients_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meals_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-7">
+        <createTable tableName="meal">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="recipt" type="LONGTEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-8">
+        <createTable tableName="patients">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="affections" type="VARCHAR(255)"/>
+            <column name="date_of_birth" type="date"/>
+            <column name="create_at" type="date"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="gender" type="VARCHAR(255)"/>
+            <column name="is_active" type="BIT(1)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="diet_id" type="BIGINT"/>
+            <column name="main_doctor_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-9">
+        <createTable tableName="patients_progress_set">
+            <column name="patients_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="progress_set_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-10">
+        <createTable tableName="progress">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="commentary" type="VARCHAR(255)"/>
+            <column name="date" type="date"/>
+            <column name="height" type="DOUBLE"/>
+            <column name="target_weight" type="DOUBLE"/>
+            <column name="weight" type="DOUBLE"/>
+            <column name="patient_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-11">
+        <addPrimaryKey columnNames="diet_id, meals_list_id" constraintName="PRIMARY" tableName="diet_meals_list"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-12">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="ingredient"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-13">
+        <addPrimaryKey columnNames="ingredients_id, meals_id" constraintName="PRIMARY" tableName="ingredient_meals"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-14">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="meal"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-15">
+        <addPrimaryKey columnNames="patients_id, progress_set_id" constraintName="PRIMARY" tableName="patients_progress_set"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-16">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="progress"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-17">
+        <addUniqueConstraint columnNames="progress_set_id" constraintName="UK_30exwu9bihf1pv0qevd072wf9" tableName="patients_progress_set"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-18">
+        <addUniqueConstraint columnNames="meals_list_id" constraintName="UK_q5eun4pq5s7b55xv77jcdgt5r" tableName="diet_meals_list"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-19">
+        <createIndex indexName="FK7k6wbjek8949gg77w5e2vnp2d" tableName="ingredient_meals">
+            <column name="meals_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-20">
+        <createIndex indexName="FKfxmocq3324nvaoo8ls0htot8j" tableName="diet">
+            <column name="patient_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-21">
+        <createIndex indexName="FKikho2ar1gf4e5prc3fokwtofv" tableName="patients">
+            <column name="diet_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-22">
+        <createIndex indexName="FKpkyleiy0t545clhsn2pg5n2ui" tableName="patients">
+            <column name="main_doctor_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-23">
+        <createIndex indexName="FKq0iqofqjoplhfgy0qnfakm5au" tableName="progress">
+            <column name="patient_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-24">
+        <addForeignKeyConstraint baseColumnNames="meals_id" baseTableName="ingredient_meals" constraintName="FK7k6wbjek8949gg77w5e2vnp2d" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="meal"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-25">
+        <addForeignKeyConstraint baseColumnNames="patients_id" baseTableName="patients_progress_set" constraintName="FKae4d4jd9684t9yv7g3cqsw0od" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="patients"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-26">
+        <addForeignKeyConstraint baseColumnNames="meals_list_id" baseTableName="diet_meals_list" constraintName="FKcwrm5ww4r0y37pdg4rplw4kfb" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="meal"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-27">
+        <addForeignKeyConstraint baseColumnNames="patient_id" baseTableName="diet" constraintName="FKfxmocq3324nvaoo8ls0htot8j" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="patients"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-28">
+        <addForeignKeyConstraint baseColumnNames="diet_id" baseTableName="patients" constraintName="FKikho2ar1gf4e5prc3fokwtofv" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="diet"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-29">
+        <addForeignKeyConstraint baseColumnNames="ingredients_id" baseTableName="ingredient_meals" constraintName="FKl1ni50gi2edk9jrloqvd262rr" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="ingredient"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-30">
+        <addForeignKeyConstraint baseColumnNames="diet_id" baseTableName="diet_meals_list" constraintName="FKor3j25e8ai9d06s3jdkaji9fe" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="diet"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-31">
+        <addForeignKeyConstraint baseColumnNames="progress_set_id" baseTableName="patients_progress_set" constraintName="FKoues2vlmfcupmc2ohk5iu9rdl" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="progress"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-32">
+        <addForeignKeyConstraint baseColumnNames="main_doctor_id" baseTableName="patients" constraintName="FKpkyleiy0t545clhsn2pg5n2ui" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="dietician"/>
+    </changeSet>
+    <changeSet author="macie (generated)" id="1575482442808-33">
+        <addForeignKeyConstraint baseColumnNames="patient_id" baseTableName="progress" constraintName="FKq0iqofqjoplhfgy0qnfakm5au" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="patients"/>
+    </changeSet>
+
+    <!--    NOWE CHANGESETY PONIŻEJ-->
+
+
+</databaseChangeLog>
