@@ -6,6 +6,7 @@ import com.github.java.demo.domain.Patient;
 import com.github.java.demo.repositories.DietRepository;
 import com.github.java.demo.repositories.PatientsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDate;
@@ -22,8 +23,12 @@ public class DietRegistrationController {
 
     }
 
+    @GetMapping
+    public String get(){
 
+        return "redirect:/";
 
+    }
 
 
     @PostMapping("/diet-registration")

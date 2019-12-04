@@ -16,6 +16,7 @@ public class Meal {
     @ManyToMany(mappedBy = "meals")
     Set<Ingredient> ingredients = new HashSet<>();
     @Column
+    @Lob
     private String recipt;
 
     public Long getId() {
