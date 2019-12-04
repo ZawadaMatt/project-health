@@ -6,6 +6,7 @@ import com.github.java.demo.repositories.IngredientRepository;
 import com.github.java.demo.repositories.MealRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,9 +29,8 @@ public class MealRegistrationController {
     }
 
     @GetMapping("/meal-register")
-    public String preprareRegistrationPage (){
-
-
+    public String preprareRegistrationPage (Model model) {
+        model.addAttribute("ingredient", ingredientRepository.findAll());
         return "redirect:/ making-meal";
     }
 
@@ -44,7 +44,7 @@ public class MealRegistrationController {
         mealRepository.save(meal);
 
 
-        return"/meal-register" ;
+        return "/meal-register";
     }
 
 
