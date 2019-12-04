@@ -30,6 +30,7 @@ public class MealRegistrationController {
     @GetMapping("/meal-register")
     public String preprareRegistrationPage (){
 
+
         return "redirect:/ making-meal";
     }
 
