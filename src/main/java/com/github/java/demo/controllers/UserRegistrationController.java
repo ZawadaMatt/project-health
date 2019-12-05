@@ -62,8 +62,7 @@ public class UserRegistrationController {
         newDietician.setLicenceNumber(licenceNumber);
         dieticanRepository.save(newDietician);
         return "index";
-        }
-
+    }
 
 
 }

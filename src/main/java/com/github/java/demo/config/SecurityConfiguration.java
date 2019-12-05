@@ -39,7 +39,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/add-dietician").anonymous()
                 .antMatchers("/add-patient").permitAll()
                 .antMatchers("/user-login").anonymous()
-                .antMatchers("/offer").permitAll();
+                .antMatchers("/offer").permitAll()
+                .anyRequest().permitAll();
 
         http.formLogin()
                 .loginPage("/user-login")
