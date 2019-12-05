@@ -23,6 +23,7 @@ public class ProgressRegistrationController {
 
     @GetMapping("/progress-register")
     public String preprareRegistrationPage () {
+
         return "WEB-INF/jsp/progress-registration-page.jsp";
     }
 
