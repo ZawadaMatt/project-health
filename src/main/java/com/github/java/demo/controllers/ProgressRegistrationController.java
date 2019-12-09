@@ -17,17 +17,18 @@ public class ProgressRegistrationController {
     private final ProgressRepository progressRepository;
 
     @Autowired
-    public ProgressRegistrationController (ProgressRepository progressRepository) {
+    public ProgressRegistrationController(ProgressRepository progressRepository) {
         this.progressRepository = progressRepository;
     }
 
     @GetMapping("/progress-register")
-    public String preprareRegistrationPage () {
+    public String preprareRegistrationPage() {
+
         return "WEB-INF/jsp/progress-registration-page.jsp";
     }
 
     @PostMapping("/progress-register")
-    public String processRegistrationPage (LocalDate date, String weight, String height, String targetWeight, String commentary) {
+    public String processRegistrationPage(LocalDate date, String weight, String height, String targetWeight, String commentary) {
         Progress progress = new Progress();
 
         progress.setDate(date);
@@ -37,10 +38,6 @@ public class ProgressRegistrationController {
         progress.setCommentary(commentary);
         progress.setPatient((Patient) SecurityContextHolder.getContext().getAuthentication().getPrincipal()); // rzutuje nam dany postęp do konkretneo zalogowanego uzytkownika (zalogowanego)
         progressRepository.save(progress);
-
-
-
-
         return "WEB-INF/jsp/home-page.jsp";
     }
 }

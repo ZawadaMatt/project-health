@@ -26,7 +26,7 @@ public class MealRegistrationController {
     @GetMapping("/meal-register")
     public String preprareRegistrationPage(Model model) {
         model.addAttribute("ingredient", ingredientRepository.findAll());
-        return "redirect:/ making-meal";
+        return "redirect:/making-meal";
     }
 
     @PostMapping("/meal-register")
