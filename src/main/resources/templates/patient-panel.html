@@ -296,8 +296,7 @@
                             </tr>
                             </thead>
                             <tbody>
-
-                            <th:block th:each="progress : ${patient.progressSet}">
+                            <th:block th:each="progress : ${progressSet}">
                                 <tr>
                                     <td th:text="${progress.getDate()}"></td>
                                     <td th:text="${progress.getHeight()}"></td>
