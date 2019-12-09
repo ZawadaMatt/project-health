@@ -34,7 +34,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-apple-alt" size="3px"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Witaj Dietetyku</div>
+            <div class="sidebar-brand-text mx-3">Witaj Pacjencie</div>
         </a>
 
         <!-- Divider -->
@@ -92,6 +92,27 @@
             </a>
         </li>
 
+        <!--    &lt;!&ndash; Divider &ndash;&gt;-->
+        <!--    <hr class="sidebar-divider">-->
+
+        <!--    &lt;!&ndash; Heading &ndash;&gt;-->
+        <!--    <div class="sidebar-heading">-->
+        <!--      Addons-->
+        <!--    </div>-->
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <!--    <li class="nav-item">-->
+        <!--      <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">-->
+        <!--        <i class="fas fa-fw fa-folder"></i>-->
+        <!--        <span>Pacjenci</span>-->
+        <!--      </a>-->
+        <!--      <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">-->
+        <!--        <div class="bg-white py-2 collapse-inner rounded">-->
+        <!--          <a class="collapse-item active" href="/"> Dodaj Pacjenta</a>-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--    </li>-->
+
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -144,7 +165,7 @@
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small" th:text="${dietican.name} + ' ' + ${dietican.lastName}"></span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small" th:text="${dietician.name} + ' ' + ${dietician.lastName}"></span>
                             <!--              <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                         </a>
                         <!-- Dropdown - User Information -->
@@ -167,6 +188,46 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-4 text-gray-800">Składniki</h1>
+                        <form class="w-100" method="post" action="/ingredient-register">
+                            <input type="text" class="form-control form-control-user" id="name" aria-describedby="nazwa"
+                                   placeholder="Nazwa składnika" name="name">
+                            <br>
+                            <input type="number" class="form-control form-control-user" id="calories"
+                                   aria-describedby="nazwa" name="calories"
+                                   placeholder="Ilość kalorii">
+                            <br>
+                            <input type="number" class="form-control form-control-user" id="protein"
+                                   aria-describedby="nazwa" name="protein"
+                                   placeholder="Ilość białka w 100g">
+                            <br>
+                            <input type="number" class="form-control form-control-user" id="fats"
+                                   aria-describedby="nazwa" name="fats"
+                                   placeholder="Ilość tłuszczów w 100g">
+                            <br>
+                            <input type="number" class="form-control form-control-user" id="carbs"
+                                   aria-describedby="nazwa" name="carbs"
+                                   placeholder="Ilość węglowodanów w 100g">
+                            <br>
+                            <input type="number" class="form-control form-control-user" id="salt"
+                                   aria-describedby="nazwa" name="salt"
+                                   placeholder="Ilość błonnika w 100g">
+                            <br>
+                            <input type="number" class="form-control form-control-user" id="weight"
+                                   aria-describedby="nazwa" name="weight"
+                                   placeholder="Waga podanego składnika">
+                            <br>
+                            <input type="text" class="form-control form-control-user" id="category"
+                                   aria-describedby="nazwa" name="category"
+                                   placeholder="Kategoria">
+                            <br>
+                            <button class="btn btn-primary" type="submit">Dodaj</button>
+                        </form>
+                    </div>
                     <div class="col col-lg-8">
                         <div class="container-fluid">
                             <div class="row">
@@ -196,7 +257,7 @@
                                 <th>Węgle</th>
                                 <th>Błonnik</th>
                             </tr>
-                            <th:block th:each="ingredient : ${ingredient}">
+                            <th:block th:each="ingredient : ${ingredients}">
                                 <tr>
                                     <td th:text="${ingredient.getName()}"></td>
                                     <td th:text="${ingredient.getCalories()}"></td>
