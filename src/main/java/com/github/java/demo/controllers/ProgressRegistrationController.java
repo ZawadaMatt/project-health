@@ -33,15 +33,15 @@ public class ProgressRegistrationController {
     }
 
     @PostMapping("/progress-register")
-    public String processRegistrationPage(LocalDate date, String weight, String height, String targetWeight, String commentary) {
+    public String processRegistrationPage(String weight, String height, String targetWeight, String commentary) {
         Progress progress = new Progress();
 
-        progress.setDate(date);
+        progress.setDate(LocalDate.now());
         progress.setWeight(Double.parseDouble(weight));
         progress.setHeight(Double.parseDouble(height));
         progress.setTargerWeight(Double.parseDouble(targetWeight));
         progress.setCommentary(commentary);
-        progress.setPatient((Patient) SecurityContextHolder.getContext().getAuthentication().getPrincipal()); // rzutuje nam dany postęp do konkretneo zalogowanego uzytkownika (zalogowanego)
+        progress.setPatient(patientsRepository.findPatientByEmail(SecurityContextHolder.getContext().getAuthentication().getName())); // rzutuje nam dany postęp do konkretneo zalogowanego uzytkownika (zalogowanego)
         progressRepository.save(progress);
         return "patient-panel";
     }
