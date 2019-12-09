@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+
 @Controller
 public class IngredientRegistrationController {
 
@@ -28,6 +30,7 @@ public class IngredientRegistrationController {
         return "ingredient-register";
     }
 
+    @Transactional
     @PostMapping("/ingredient-register")
     public String ingredientRegistration(String name, String calories, String protein, String fats, String carbs, String salt, String weight, String category) {
         Ingredient ingredient = new Ingredient();
@@ -41,6 +44,7 @@ public class IngredientRegistrationController {
         ingredient.setWeight(Double.parseDouble(weight));
         ingredient.setCategory(category);
         ingredientRepository.save(ingredient);
+        ingredientRepository.flush();
         return "redirect:/";
     }
 
