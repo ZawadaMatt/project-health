@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 
 @Controller
@@ -29,9 +30,11 @@ public class ProgressRegistrationController {
     public String prepareRegistrationPage(Model model) {
         model.addAttribute("patient", patientsRepository
                 .findPatientByEmail(SecurityContextHolder.getContext().getAuthentication().getName()));
+        model.addAttribute("progressSet", progressRepository.findProgressesByPatient((Patient) model.getAttribute("patient")));
         return "patient-panel";
     }
 
+    @Transactional
     @PostMapping("/progress-register")
     public String processRegistrationPage(String weight, String height, String targetWeight, String commentary) {
         Progress progress = new Progress();

@@ -44,7 +44,7 @@ public class HomePageController {
             Patient patient = patientsRepository
                     .findPatientByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
             model.addAttribute("patient", patient);
-            return "patient-panel";
+            return "redirect:/progress-register";
 
         } else if (authentication.getAuthorities().stream()
                 .anyMatch(a -> ((GrantedAuthority) a).getAuthority().equalsIgnoreCase("DIETETIAN"))) {
