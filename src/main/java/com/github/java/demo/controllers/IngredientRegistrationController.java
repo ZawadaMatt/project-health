@@ -1,9 +1,12 @@
 package com.github.java.demo.controllers;
 
 import com.github.java.demo.domain.Ingredient;
+import com.github.java.demo.repositories.DietRepository;
+import com.github.java.demo.repositories.DieticanRepository;
 import com.github.java.demo.repositories.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,14 +17,18 @@ import javax.transaction.Transactional;
 public class IngredientRegistrationController {
 
     private IngredientRepository ingredientRepository;
+    private DieticanRepository dieticanRepository;
 
     @Autowired
-    public IngredientRegistrationController(IngredientRepository ingredientRepository) {
+    public IngredientRegistrationController(IngredientRepository ingredientRepository, DieticanRepository dieticanRepository) {
         this.ingredientRepository = ingredientRepository;
+        this.dieticanRepository = dieticanRepository;
     }
 
     @GetMapping("/ingredient-register")
     public String addIngredient(Model model, @RequestParam(defaultValue = "0", required = false) String search) {
+        model.addAttribute("dietician", dieticanRepository
+                .findByEmail(SecurityContextHolder.getContext().getAuthentication().getName()));
         if (search.equalsIgnoreCase("0")) {
             model.addAttribute("ingredients", ingredientRepository.findAll(Sort.by(Sort.Direction.ASC, "name")));
         } else {
