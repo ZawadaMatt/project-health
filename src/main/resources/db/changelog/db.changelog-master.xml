@@ -184,4 +184,1088 @@
     <changeSet author="micha (generated)" id="1575574964115-30">
         <addForeignKeyConstraint baseColumnNames="patient_id" baseTableName="progress" constraintName="FKq0iqofqjoplhfgy0qnfakm5au" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="patients"/>
     </changeSet>
+
+    <changeSet id="0000000001" author="maciej">
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="1"/>
+            <column name="calories" valueNumeric="511.0"/>
+            <column name="carbs" valueNumeric="50.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="32.0"/>
+            <column name="name" value="Faworki"/>
+            <column name="protein" value="9.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="2"/>
+            <column name="calories" valueNumeric="62.0"/>
+            <column name="carbs" valueNumeric="18.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Agrest"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="5.0"/>
+            <column name="weight" value="150.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="3"/>
+            <column name="calories" valueNumeric="21.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="nabiał"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Jogurt owocowy"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="23.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="4"/>
+            <column name="calories" valueNumeric="60.0"/>
+            <column name="carbs" valueNumeric="11.0"/>
+            <column name="category" value=""/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Quinoa - komosa ryżowa czerwona"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="11.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="5"/>
+            <column name="calories" valueNumeric="105.0"/>
+            <column name="carbs" valueNumeric="26.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Banan"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="2.0"/>
+            <column name="weight" value="110.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="6"/>
+            <column name="calories" valueNumeric="78.0"/>
+            <column name="carbs" valueNumeric="20.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Borówka amerykańska"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="3.0"/>
+            <column name="weight" value="150.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="7"/>
+            <column name="calories" valueNumeric="72.0"/>
+            <column name="carbs" valueNumeric="19.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Brzoskwinia"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="3.0"/>
+            <column name="weight" value="156.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="8"/>
+            <column name="calories" valueNumeric="3.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Cytryna"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="8.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="9"/>
+            <column name="calories" valueNumeric="85.0"/>
+            <column name="carbs" valueNumeric="20.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Czereśnie"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="2.0"/>
+            <column name="weight" value="140.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="10"/>
+            <column name="calories" valueNumeric="17.0"/>
+            <column name="carbs" valueNumeric="5.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Daktyle suszone"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="6.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="11"/>
+            <column name="calories" valueNumeric="13.0"/>
+            <column name="carbs" valueNumeric="3.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Granat"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="17.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="12"/>
+            <column name="calories" valueNumeric="104.0"/>
+            <column name="carbs" valueNumeric="27.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Jabłko"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="5.0"/>
+            <column name="weight" value="223.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="13"/>
+            <column name="calories" valueNumeric="73.0"/>
+            <column name="carbs" valueNumeric="20.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Jeżyny"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="9.0"/>
+            <column name="weight" value="146.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="14"/>
+            <column name="calories" valueNumeric="32.0"/>
+            <column name="carbs" valueNumeric="13.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Maliny"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="7.0"/>
+            <column name="weight" value="110.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="15"/>
+            <column name="calories" valueNumeric="28.0"/>
+            <column name="carbs" valueNumeric="8.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Mandarynka"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="67.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="16"/>
+            <column name="calories" valueNumeric="116.0"/>
+            <column name="carbs" valueNumeric="29.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Nektarynka"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="3.0"/>
+            <column name="weight" value="242.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="17"/>
+            <column name="calories" valueNumeric="98.0"/>
+            <column name="carbs" valueNumeric="25.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Pomarańcza"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="4.0"/>
+            <column name="weight" value="223.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="18"/>
+            <column name="calories" valueNumeric="8.0"/>
+            <column name="carbs" valueNumeric="2.0"/>
+            <column name="category" value="owoc"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Śliwki suszone"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="3.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="19"/>
+            <column name="calories" valueNumeric="84.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Pierś z indyka"/>
+            <column name="protein" value="19.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="20"/>
+            <column name="calories" valueNumeric="131.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="6.0"/>
+            <column name="name" value="Udko z indyka"/>
+            <column name="protein" value="18.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="21"/>
+            <column name="calories" valueNumeric="158.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="8.0"/>
+            <column name="name" value="królik tuszka"/>
+            <column name="protein" value="21.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="22"/>
+            <column name="calories" valueNumeric="99.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="kurczak pierś"/>
+            <column name="protein" value="22.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="23"/>
+            <column name="calories" valueNumeric="158.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="10.0"/>
+            <column name="name" value="Kurczak noga"/>
+            <column name="protein" value="17.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="24"/>
+            <column name="calories" valueNumeric="53.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="4.0"/>
+            <column name="name" value="Parówki cielęce"/>
+            <column name="protein" value="4.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="26.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="25"/>
+            <column name="calories" valueNumeric="193.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="17.0"/>
+            <column name="name" value="Parówki z szynki"/>
+            <column name="protein" value="9.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="66.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="26"/>
+            <column name="calories" valueNumeric="160.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="9.0"/>
+            <column name="name" value="Mięso mielone wołowo-wieprzowe"/>
+            <column name="protein" value="19.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="27"/>
+            <column name="calories" valueNumeric="267.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="3.0"/>
+            <column name="name" value="Karkówka"/>
+            <column name="protein" value="16.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="28"/>
+            <column name="calories" valueNumeric="109.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="2.0"/>
+            <column name="name" value="Polędwiczka wieprzowa"/>
+            <column name="protein" value="21.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="29"/>
+            <column name="calories" valueNumeric="153.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Antrykot"/>
+            <column name="protein" value="21.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="30"/>
+            <column name="calories" valueNumeric="243.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="20.0"/>
+            <column name="name" value="Mielona wołowina"/>
+            <column name="protein" value="17.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="31"/>
+            <column name="calories" valueNumeric="152.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="7.0"/>
+            <column name="name" value="Rostbef wołowy"/>
+            <column name="protein" value="22.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="32"/>
+            <column name="calories" valueNumeric="12.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Polędwica sopocka"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="12.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="33"/>
+            <column name="calories" valueNumeric="24.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="mięso"/>
+            <column name="fats" valueNumeric="2.0"/>
+            <column name="name" value="Szynka szwardzwaldzka"/>
+            <column name="protein" value="3.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="10.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="34"/>
+            <column name="calories" valueNumeric="104.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="wędliny"/>
+            <column name="fats" valueNumeric="9.0"/>
+            <column name="name" value="Frankfurterki"/>
+            <column name="protein" value="6.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="33.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="35"/>
+            <column name="calories" valueNumeric="278.0"/>
+            <column name="carbs" valueNumeric="3.0"/>
+            <column name="category" value="wędliny"/>
+            <column name="fats" valueNumeric="24.0"/>
+            <column name="name" value="Kiełbasa biała"/>
+            <column name="protein" value="11.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="102.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="36"/>
+            <column name="calories" valueNumeric="258.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="wędliny"/>
+            <column name="fats" valueNumeric="19.0"/>
+            <column name="name" value="kiełbasa śląska"/>
+            <column name="protein" value="23.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="123.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="37"/>
+            <column name="calories" valueNumeric="120.0"/>
+            <column name="carbs" valueNumeric="11.0"/>
+            <column name="category" value="nabiał"/>
+            <column name="fats" valueNumeric="5.0"/>
+            <column name="name" value="Kefir 2%"/>
+            <column name="protein" value="8.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="236.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="38"/>
+            <column name="calories" valueNumeric="153.0"/>
+            <column name="carbs" valueNumeric="12.0"/>
+            <column name="category" value="nabiał"/>
+            <column name="fats" valueNumeric="8.0"/>
+            <column name="name" value="Mleko 3.2%"/>
+            <column name="protein" value="8.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="250.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="39"/>
+            <column name="calories" valueNumeric="120.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="nabiał"/>
+            <column name="fats" valueNumeric="8.0"/>
+            <column name="name" value="Tofu z bazylia"/>
+            <column name="protein" value="12.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="40"/>
+            <column name="calories" valueNumeric="30.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="nabiał"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Twaróg chudy"/>
+            <column name="protein" value="6.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="30.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="41"/>
+            <column name="calories" valueNumeric="73.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="nabiał"/>
+            <column name="fats" valueNumeric="6.0"/>
+            <column name="name" value="Ser Gouda"/>
+            <column name="protein" value="6.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="22.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="42"/>
+            <column name="calories" valueNumeric="35.0"/>
+            <column name="carbs" valueNumeric="8.0"/>
+            <column name="category" value="produkty zbożowe"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Kasza bulgur"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="11.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="43"/>
+            <column name="calories" valueNumeric="40.0"/>
+            <column name="carbs" valueNumeric="8.0"/>
+            <column name="category" value="produkty zbożowe"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Kasza gryczana"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="12.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="44"/>
+            <column name="calories" valueNumeric="40.0"/>
+            <column name="carbs" valueNumeric="8.0"/>
+            <column name="category" value="produkty zbożowe"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Kasza gryczana"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="12.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="45"/>
+            <column name="calories" valueNumeric="40.0"/>
+            <column name="carbs" valueNumeric="8.0"/>
+            <column name="category" value="produkty zbożowe"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Kasza gryczana"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="12.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="46"/>
+            <column name="calories" valueNumeric="42.0"/>
+            <column name="carbs" valueNumeric="9.0"/>
+            <column name="category" value="produkty zbożowe"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Kasza Jaglana"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="12.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="47"/>
+            <column name="calories" valueNumeric="246.0"/>
+            <column name="carbs" valueNumeric="55.0"/>
+            <column name="category" value="produkty zbożowe - makaron"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Świderki"/>
+            <column name="protein" value="5.0"/>
+            <column name="salt" value="8.0"/>
+            <column name="weight" value="69.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="48"/>
+            <column name="calories" valueNumeric="66.0"/>
+            <column name="carbs" valueNumeric="14.0"/>
+            <column name="category" value="produkty zbożowe - makaron"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Lasagne"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="19.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="49"/>
+            <column name="calories" valueNumeric="312.0"/>
+            <column name="carbs" valueNumeric="66.0"/>
+            <column name="category" value="produkty zbożowe - makaron"/>
+            <column name="fats" valueNumeric="2.0"/>
+            <column name="name" value="Pełnoziarnisty penne"/>
+            <column name="protein" value="12.0"/>
+            <column name="salt" value="9.0"/>
+            <column name="weight" value="93.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="50"/>
+            <column name="calories" valueNumeric="65.0"/>
+            <column name="carbs" valueNumeric="15.0"/>
+            <column name="category" value="ryż"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Ryż basmati"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="19.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="51"/>
+            <column name="calories" valueNumeric="65.0"/>
+            <column name="carbs" valueNumeric="15.0"/>
+            <column name="category" value="ryż"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Ryż basmati"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="19.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="52"/>
+            <column name="calories" valueNumeric="65.0"/>
+            <column name="carbs" valueNumeric="15.0"/>
+            <column name="category" value="ryż"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Ryż biały"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="19.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="53"/>
+            <column name="calories" valueNumeric="45.0"/>
+            <column name="carbs" valueNumeric="11.0"/>
+            <column name="category" value="ryż"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Ryż brązowy"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="14.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="54"/>
+            <column name="calories" valueNumeric="59.0"/>
+            <column name="carbs" valueNumeric="13.0"/>
+            <column name="category" value="ryż"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Ryż jaśminowy"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="17.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="55"/>
+            <column name="calories" valueNumeric="70.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="ryby"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Dorsz filet"/>
+            <column name="protein" value="17.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="56"/>
+            <column name="calories" valueNumeric="94.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="ryby"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Dorsz wędzony"/>
+            <column name="protein" value="22.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="57"/>
+            <column name="calories" valueNumeric="83.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="ryby"/>
+            <column name="fats" valueNumeric="2.0"/>
+            <column name="name" value="Flądra filet"/>
+            <column name="protein" value="17.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="58"/>
+            <column name="calories" valueNumeric="110.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="ryby"/>
+            <column name="fats" valueNumeric="4.0"/>
+            <column name="name" value="Karp filet"/>
+            <column name="protein" value="18.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="59"/>
+            <column name="calories" valueNumeric="102.0"/>
+            <column name="carbs" valueNumeric="6.0"/>
+            <column name="category" value="ryby"/>
+            <column name="fats" valueNumeric="3.0"/>
+            <column name="name" value="Karp po grecku"/>
+            <column name="protein" value="12.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="60"/>
+            <column name="calories" valueNumeric="133.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="ryby"/>
+            <column name="fats" valueNumeric="2.0"/>
+            <column name="name" value="Krewetki koktajlowe"/>
+            <column name="protein" value="29.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="187.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="61"/>
+            <column name="calories" valueNumeric="161.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="ryby"/>
+            <column name="fats" valueNumeric="11.0"/>
+            <column name="name" value="Śledź"/>
+            <column name="protein" value="16.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="62"/>
+            <column name="calories" valueNumeric="301.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="ryby"/>
+            <column name="fats" valueNumeric="27.0"/>
+            <column name="name" value="Śledź w oleju"/>
+            <column name="protein" value="16.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="63"/>
+            <column name="calories" valueNumeric="525.0"/>
+            <column name="carbs" valueNumeric="61.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="29.0"/>
+            <column name="name" value="Alpen Gold czekolada mleczna"/>
+            <column name="protein" value="6.0"/>
+            <column name="salt" value="2.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="64"/>
+            <column name="calories" valueNumeric="382.0"/>
+            <column name="carbs" valueNumeric="43.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="20.0"/>
+            <column name="name" value="Croissant"/>
+            <column name="protein" value="8.0"/>
+            <column name="salt" value="2.0"/>
+            <column name="weight" value="94.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="65"/>
+            <column name="calories" valueNumeric="376.0"/>
+            <column name="carbs" valueNumeric="66.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="8.0"/>
+            <column name="name" value="Drożdżówka z budyniem"/>
+            <column name="protein" value="8.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="132.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="66"/>
+            <column name="calories" valueNumeric="253.0"/>
+            <column name="carbs" valueNumeric="28.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="13.0"/>
+            <column name="name" value="Ekler"/>
+            <column name="protein" value="6.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="110.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="67"/>
+            <column name="calories" valueNumeric="511.0"/>
+            <column name="carbs" valueNumeric="50.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="32.0"/>
+            <column name="name" value="Prince Polo"/>
+            <column name="protein" value="9.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="68"/>
+            <column name="calories" valueNumeric="104.0"/>
+            <column name="carbs" valueNumeric="8.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="7.0"/>
+            <column name="name" value="Ptyś"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="30.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="69"/>
+            <column name="calories" valueNumeric="188.0"/>
+            <column name="carbs" valueNumeric="29.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="7.0"/>
+            <column name="name" value="Pączek z dżemem"/>
+            <column name="protein" value="3.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="56.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="70"/>
+            <column name="calories" valueNumeric="294.0"/>
+            <column name="carbs" valueNumeric="44.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="11.0"/>
+            <column name="name" value="Pączek z lukrem"/>
+            <column name="protein" value="5.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="71.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="71"/>
+            <column name="calories" valueNumeric="545.0"/>
+            <column name="carbs" valueNumeric="55.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="27.0"/>
+            <column name="name" value="Serniczek basmati"/>
+            <column name="protein" value="20.0"/>
+            <column name="salt" value="1.0"/>
+            <column name="weight" value="150.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="72"/>
+            <column name="calories" valueNumeric="8.0"/>
+            <column name="carbs" valueNumeric="2.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="1.0"/>
+            <column name="name" value="Syrop klonowy biały"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="3.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="73"/>
+            <column name="calories" valueNumeric="471.0"/>
+            <column name="carbs" valueNumeric="59.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="20.0"/>
+            <column name="name" value="Sante Ciastka Owsiane"/>
+            <column name="protein" value="10.0"/>
+            <column name="salt" value="7.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="74"/>
+            <column name="calories" valueNumeric="552.0"/>
+            <column name="carbs" valueNumeric="52.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="34.0"/>
+            <column name="name" value="Jajko niespodzianka"/>
+            <column name="protein" value="18.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="75"/>
+            <column name="calories" valueNumeric="519.0"/>
+            <column name="carbs" valueNumeric="53.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="31.0"/>
+            <column name="name" value="Lay's karbowane zielona cebulka"/>
+            <column name="protein" value="6.0"/>
+            <column name="salt" value="4.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="76"/>
+            <column name="calories" valueNumeric="388.0"/>
+            <column name="carbs" valueNumeric="76.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="3.0"/>
+            <column name="name" value="Lajkonik paluszki"/>
+            <column name="protein" value="12.0"/>
+            <column name="salt" value="3.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="77"/>
+            <column name="calories" valueNumeric="476.0"/>
+            <column name="carbs" valueNumeric="62.0"/>
+            <column name="category" value="słodycze"/>
+            <column name="fats" valueNumeric="21.0"/>
+            <column name="name" value="Lajkonik krakersy"/>
+            <column name="protein" value="9.0"/>
+            <column name="salt" value="2.0"/>
+            <column name="weight" value="100.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="78"/>
+            <column name="calories" valueNumeric="62.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="tłuszcze"/>
+            <column name="fats" valueNumeric="7.0"/>
+            <column name="name" value="Oliwa z oliwek"/>
+            <column name="protein" value="0.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="7.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="79"/>
+            <column name="calories" valueNumeric="62.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="tłuszcze"/>
+            <column name="fats" valueNumeric="7.0"/>
+            <column name="name" value="Smalec"/>
+            <column name="protein" value="0.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="7.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="80"/>
+            <column name="calories" valueNumeric="43.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="tłuszcze"/>
+            <column name="fats" valueNumeric="5.0"/>
+            <column name="name" value="Margaryna"/>
+            <column name="protein" value="0.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="8.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="81"/>
+            <column name="calories" valueNumeric="59.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="tłuszcze"/>
+            <column name="fats" valueNumeric="7.0"/>
+            <column name="name" value="Masło"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="8.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="82"/>
+            <column name="calories" valueNumeric="88.0"/>
+            <column name="carbs" valueNumeric="0.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Wódka"/>
+            <column name="protein" value="0.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="40.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="83"/>
+            <column name="calories" valueNumeric="104.0"/>
+            <column name="carbs" valueNumeric="5.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Wino wytrawne"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="125.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="84"/>
+            <column name="calories" valueNumeric="109.0"/>
+            <column name="carbs" valueNumeric="5.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Wino półwytrawne"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="125.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="85"/>
+            <column name="calories" valueNumeric="119.0"/>
+            <column name="carbs" valueNumeric="7.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Wino półsłodkie"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="125.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="86"/>
+            <column name="calories" valueNumeric="200.0"/>
+            <column name="carbs" valueNumeric="17.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Wino słodkie"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="125.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="87"/>
+            <column name="calories" valueNumeric="85.0"/>
+            <column name="carbs" valueNumeric="21.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Whisky"/>
+            <column name="protein" value="0.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="40.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="88"/>
+            <column name="calories" valueNumeric="30.0"/>
+            <column name="carbs" valueNumeric="1.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Szampan"/>
+            <column name="protein" value="1.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="40.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="89"/>
+            <column name="calories" valueNumeric="171.0"/>
+            <column name="carbs" valueNumeric="10.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Piwo pszeniczne"/>
+            <column name="protein" value="2.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="500.0"/>
+        </insert>
+        <insert
+                tableName="ingredient">
+            <column name="id" valueNumeric="90"/>
+            <column name="calories" valueNumeric="245.0"/>
+            <column name="carbs" valueNumeric="19.0"/>
+            <column name="category" value="alkohole"/>
+            <column name="fats" valueNumeric="0.0"/>
+            <column name="name" value="Piwo jasne"/>
+            <column name="protein" value="3.0"/>
+            <column name="salt" value="0.0"/>
+            <column name="weight" value="500.0"/>
+        </insert>
+
+    </changeSet>
 </databaseChangeLog>
