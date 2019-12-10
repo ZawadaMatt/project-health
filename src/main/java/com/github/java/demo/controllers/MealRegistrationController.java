@@ -49,6 +49,16 @@ public class MealRegistrationController {
 
         return "/meal-register";
     }
+    @PostMapping("/meal-add")
+    public String mealAdder(String id){
+        mealService.addIngredientToCard(Long.valueOf(id));
+        return "redirect:/";
+    }
+    @PostMapping("/meal-minus")
+    public String mealMinuser(String id){
+        mealService.deleteIngredientFromCard(ingredientRepository.findIngredientById(Long.valueOf(id)));
+        return "redirect:/";
+    }
 
 
 }

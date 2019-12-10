@@ -201,8 +201,8 @@
                             <th:block th:each="ingredient : ${ingredient}">
                                 <tr>
                                     <td th:text="${ingredient.getName()}"></td>
-                                    <td> <input type="button" value="+" class="btn" th:attrappend="class=${' ' + cssStyle}" /></td>
-                                    <td> <input type="button" value="-" class="btn" th:attrappend="class=${' ' + cssStyle}" /></td>
+                                    <td> <input  type="button" th:value2="${ingredient.getId()}" class="btn addbutton" th:attrappend="class=${' ' + cssStyle}" value="+"/></td>
+                                    <td> <input type="button" th:value2="${ingredient.getId()}" class="btn minusbutton" th:attrappend="class=${' ' + cssStyle}" value="-" /></td>
                                     <td th:text="${ingredient.getCalories()}"></td>
                                     <td th:text="${ingredient.getProtein()}"></td>
                                     <td th:text="${ingredient.getFats()}"></td>
@@ -282,6 +282,41 @@
 
 <!-- Custom scripts for all pages-->
 <script src="admin/js/sb-admin-2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".addbutton").click(function() {
+            var id = $(this).attr('value2');
+
+            $.ajax ({
+                type: "POST",
+                url: "/meal-add",
+                data: { "id" : id},
+                success: function(){
+
+                    window.location.reload();
+                }
+                });
+        });
+    });
+</script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".minusbutton").click(function() {
+                var id = $(this).attr('value2');
+
+                $.ajax ({
+                    type: "POST",
+                    url: "/meal-minus",
+                    data: { "id" : id},
+                    success: function(){
+
+                        window.location.reload();
+                    }
+                });
+            });
+        });
+
+</script>
 
 </body>
 
