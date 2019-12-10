@@ -4,6 +4,7 @@ import com.github.java.demo.domain.Meal;
 import com.github.java.demo.repositories.DieticanRepository;
 import com.github.java.demo.repositories.IngredientRepository;
 import com.github.java.demo.repositories.MealRepository;
+import com.github.java.demo.service.MealService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -19,18 +20,21 @@ public class MealRegistrationController {
     private final MealRepository mealRepository;
     private final IngredientRepository ingredientRepository;
     private DieticanRepository dieticanRepository;
+    private MealService mealService;
 
     @Autowired
-    public MealRegistrationController(MealRepository mealRepository, IngredientRepository ingredientRepository, DieticanRepository dieticanRepository) {
+    public MealRegistrationController(MealService mealService, MealRepository mealRepository, IngredientRepository ingredientRepository, DieticanRepository dieticanRepository) {
         this.mealRepository = mealRepository;
         this.ingredientRepository = ingredientRepository;
         this.dieticanRepository = dieticanRepository;
+        this.mealService = mealService;
     }
 
     @GetMapping("/meal-register")
     public String preprareRegistrationPage(Model model) {
         model.addAttribute("ingredient", ingredientRepository.findAll());
         model.addAttribute("dietican", dieticanRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName()));
+        model.addAttribute("mealCard", mealService.showIngredientsInHtml());
         return "meal-register";
     }
 
